@@ -228,6 +228,15 @@ msgstr "Die Nachricht konnte nicht registriert werden."
 msgid "Invalid external_id."
 msgstr "Ungültige external_id."
 
+msgid "Send a JSON object containing token."
+msgstr "Bitte ein JSON-Objekt mit token senden."
+
+msgid "token must contain exactly 64 ASCII letters or digits."
+msgstr "token muss genau 64 ASCII-Buchstaben oder Ziffern enthalten."
+
+msgid "No message matches this token in the authenticated project."
+msgstr "Für dieses token wurde im authentifizierten Projekt keine Nachricht gefunden."
+
 msgid "Dates must be valid UTC timestamps: YYYY-MM-DDTHH:MM:SSZ."
 msgstr "Zeitangaben müssen gültige UTC-Zeitstempel sein: YYYY-MM-DDTHH:MM:SSZ."
 

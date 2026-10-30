@@ -369,6 +369,19 @@ msgstr ""
 msgid "Invalid external_id."
 msgstr ""
 
+#: includes/Api.php:79
+#: includes/Api.php:84
+msgid "Send a JSON object containing token."
+msgstr ""
+
+#: includes/Api.php:87
+msgid "token must contain exactly 64 ASCII letters or digits."
+msgstr ""
+
+#: includes/Api.php:93
+msgid "No message matches this token in the authenticated project."
+msgstr ""
+
 #: includes/Api.php:106
 msgid "Dates must be valid UTC timestamps: YYYY-MM-DDTHH:MM:SSZ."
 msgstr ""
