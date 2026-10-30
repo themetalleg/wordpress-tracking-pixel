@@ -1,0 +1,36 @@
+name: Release ZIP
+on:
+  release:
+    types: [published]
+permissions:
+  contents: write
+jobs:
+  package:
+    if: ${{ !github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+      - name: Validate release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version=$(sed -n 's/^ \* Version: //p' wordpress-tracking-pixel.php)
+          test "${RELEASE_TAG#v}" = "$version"
+          grep -q "define('WTP_VERSION', '$version');" wordpress-tracking-pixel.php
+          grep -q "^Stable tag: $version$" readme.txt
+      - run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+      - run: composer validate --strict
+      - run: composer lint && composer test
+      - run: sh tools/build.sh
+      - name: Upload installable ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$RELEASE_TAG" dist/wordpress-tracking-pixel.zip --clobber

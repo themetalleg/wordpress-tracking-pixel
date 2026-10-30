@@ -1,0 +1,49 @@
+name: wordpress-tracking-pixel
+services:
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: local-development-only
+      MARIADB_ROOT_PASSWORD: local-root-only
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      retries: 30
+  wordpress:
+    image: ${WORDPRESS_IMAGE:-wordpress:php8.2-apache}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${WTP_PORT:-8098}:80"
+    environment: &wp_environment
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: local-development-only
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: '1'
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_DEBUG_DISPLAY', false);
+    volumes: &wp_volumes
+      - wordpress:/var/www/html
+      - ./:/var/www/html/wp-content/plugins/wordpress-tracking-pixel:ro
+  cli:
+    image: wordpress:cli-php8.2
+    entrypoint: [docker-entrypoint.sh, wp]
+    user: "33:33"
+    profiles: [tools]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      <<: *wp_environment
+      WP_CLI_CACHE_DIR: /tmp/wp-cli-cache
+    volumes: *wp_volumes
+volumes:
+  database:
+  wordpress:

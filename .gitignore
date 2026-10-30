@@ -1,0 +1,6 @@
+/PROJECT_PLAN.md
+/vendor/
+/dist/
+/.env
+/node_modules/
+/.phpunit.cache/

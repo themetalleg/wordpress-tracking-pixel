@@ -1,0 +1,61 @@
+name: Tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  live-tester:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/live-test.test.mjs
+  php:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+      - run: composer install --no-interaction --prefer-dist
+      - run: composer validate --strict
+      - run: composer lint
+      - run: composer test
+      - run: sh tools/build.sh
+      - name: Verify release contents
+        run: |
+          unzip -t dist/wordpress-tracking-pixel.zip
+          ! unzip -Z1 dist/wordpress-tracking-pixel.zip | grep -E 'PROJECT_PLAN|/tests/|/\.git/'
+          unzip -Z1 dist/wordpress-tracking-pixel.zip | grep -q '^wordpress-tracking-pixel/languages/wordpress-tracking-pixel-de_DE.mo$'
+          unzip -Z1 dist/wordpress-tracking-pixel.zip | grep -q '^wordpress-tracking-pixel/assets/admin.css$'
+  wordpress:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image: ['wordpress:6.6-php8.2-apache', 'wordpress:php8.2-apache']
+    env:
+      WORDPRESS_IMAGE: ${{ matrix.image }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+      - run: composer install --no-interaction --prefer-dist
+      - run: docker compose up -d --wait wordpress
+      - name: Install WordPress
+        run: docker compose run --rm cli core install --url=http://localhost:8098 --title='Pixel Tests' --admin_user=localadmin --admin_password=local-test-password --admin_email=local@example.test --skip-email
+      - run: docker compose run --rm cli plugin activate wordpress-tracking-pixel
+      - run: docker compose run --rm cli eval-file wp-content/plugins/wordpress-tracking-pixel/tests/integration.php
+      - run: docker compose run --rm cli eval-file wp-content/plugins/wordpress-tracking-pixel/tests/admin.php
+      - name: Extract current translation template
+        run: docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/app" -w /app wordpress:cli-php8.2 wp i18n make-pot . languages/wordpress-tracking-pixel.pot --domain=wordpress-tracking-pixel --exclude=vendor,dist,tests --skip-audit
+      - run: docker compose run --rm cli language core install de_DE
+      - run: docker compose run --rm cli eval-file wp-content/plugins/wordpress-tracking-pixel/tests/i18n.php
+      - if: always()
+        run: docker compose down -v

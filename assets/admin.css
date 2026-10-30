@@ -1,0 +1,357 @@
+.wtp-admin {
+    --wtp-label-width: 190px;
+    --wtp-field-gap: 24px;
+    --wtp-control-height: 40px;
+    max-width: 1120px;
+    padding-bottom: 32px;
+    letter-spacing: 0;
+}
+
+.wtp-admin * {
+    box-sizing: border-box;
+}
+
+.wtp-section {
+    padding: 28px 0;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.wtp-section h2,
+.wtp-section h3 {
+    margin: 0 0 20px;
+    overflow-wrap: anywhere;
+}
+
+.wtp-projects-title {
+    margin-top: 28px;
+}
+
+.wtp-search {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.wtp-admin .wtp-search input[type="search"] {
+    min-height: var(--wtp-control-height);
+    width: 280px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.wtp-admin .wtp-project-list {
+    min-width: 720px;
+}
+
+.wtp-project-list th:first-child {
+    width: 30%;
+}
+
+.wtp-project-list th:nth-child(2) {
+    width: 19%;
+}
+
+.wtp-project-list th:nth-child(3) {
+    width: 25%;
+}
+
+.wtp-row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.wtp-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.wtp-tabs {
+    margin-bottom: 28px;
+}
+
+.wtp-event-pagination {
+    margin: 16px 0;
+}
+
+.wtp-item-range {
+    margin-right: auto;
+}
+
+.wtp-page-links {
+    display: flex;
+    gap: 6px;
+}
+
+.wtp-admin .wtp-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+.wtp-section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.wtp-section-header h2 {
+    margin: 0 0 8px;
+}
+
+.wtp-admin a.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wtp-admin .button .dashicons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.wtp-admin .button .dashicons::before {
+    line-height: 20px;
+}
+
+.wtp-project-id {
+    margin: 0;
+    color: #50575e;
+}
+
+.wtp-form {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+}
+
+.wtp-field {
+    display: grid;
+    grid-template-columns: var(--wtp-label-width) minmax(0, 1fr);
+    gap: 8px var(--wtp-field-gap);
+    align-items: start;
+}
+
+.wtp-field > label {
+    padding-top: 10px;
+    font-weight: 600;
+    line-height: 20px;
+    overflow-wrap: anywhere;
+}
+
+.wtp-control {
+    min-width: 0;
+}
+
+.wtp-admin .wtp-control input[type="text"],
+.wtp-admin .wtp-control input[type="datetime-local"],
+.wtp-admin .wtp-control select {
+    display: block;
+    width: 440px;
+    max-width: 100%;
+    min-height: var(--wtp-control-height);
+    margin: 0;
+}
+
+.wtp-admin .button {
+    min-height: var(--wtp-control-height);
+    margin: 0;
+    padding: 0 14px;
+    line-height: 38px;
+    white-space: normal;
+}
+
+.wtp-inline {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.wtp-offset {
+    margin-left: calc(var(--wtp-label-width) + var(--wtp-field-gap));
+}
+
+.wtp-confirmation {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 560px;
+    padding: 12px 14px;
+    border-left: 3px solid #dba617;
+    background: #fcf9e8;
+    line-height: 1.6;
+}
+
+.wtp-confirmation input[type="checkbox"] {
+    flex-shrink: 0;
+    margin: 3px 0 0;
+}
+
+.wtp-retention-confirmation[hidden] {
+    display: none;
+}
+
+.wtp-subsection {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #dcdcde;
+}
+
+.wtp-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0 0 20px;
+}
+
+.wtp-admin .widefat {
+    table-layout: fixed;
+}
+
+.wtp-admin .widefat td,
+.wtp-admin .widefat th {
+    vertical-align: middle;
+    padding: 12px;
+    overflow-wrap: anywhere;
+}
+
+.wtp-admin .widefat .wtp-form {
+    display: block;
+}
+
+.wtp-admin .wtp-keys th:last-child {
+    width: 140px;
+}
+
+.wtp-admin .wtp-events th:last-child {
+    width: 220px;
+}
+
+.wtp-admin .widefat .wtp-empty {
+    padding: 20px 12px;
+    color: #646970;
+}
+
+.wtp-danger {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #dcdcde;
+}
+
+.wtp-danger summary {
+    width: fit-content;
+    color: #b32d2e;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.wtp-danger-message {
+    max-width: 720px;
+    margin: 20px 0 4px;
+    line-height: 1.6;
+}
+
+.wtp-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 28px 0 20px;
+    padding: 20px 0;
+    border-top: 1px solid #dcdcde;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.wtp-summary dt {
+    margin-bottom: 8px;
+    color: #50575e;
+}
+
+.wtp-summary dd {
+    margin: 0;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.wtp-tutorial {
+    max-width: 960px;
+}
+
+.wtp-tutorial h2 {
+    margin: 32px 0 16px;
+    padding-top: 24px;
+    border-top: 1px solid #dcdcde;
+}
+
+.wtp-tutorial p {
+    max-width: 82ch;
+    line-height: 1.7;
+}
+
+.wtp-admin code {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 782px) {
+    .wtp-admin {
+        --wtp-label-width: 160px;
+        --wtp-field-gap: 16px;
+    }
+
+    .wtp-section {
+        padding: 24px 0;
+    }
+
+    .wtp-admin .wtp-keys {
+        min-width: 560px;
+    }
+
+    .wtp-admin .wtp-events th:last-child {
+        width: 44%;
+    }
+
+    .wtp-confirmation input[type="checkbox"] {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .wtp-field {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .wtp-field > label {
+        padding-top: 0;
+    }
+
+    .wtp-offset {
+        margin-left: 0;
+    }
+
+    .wtp-inline input[type="text"] {
+        flex-basis: 100%;
+    }
+
+    .wtp-summary {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+}

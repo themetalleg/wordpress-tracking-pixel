@@ -1,0 +1,17 @@
+{
+  "name": "themetalleg/wordpress-tracking-pixel",
+  "description": "Project-scoped email pixel tracking for WordPress.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.2",
+    "yahnis-elsts/plugin-update-checker": "^5.6"
+  },
+  "autoload": {
+    "psr-4": { "Metalleg\\TrackingPixel\\": "includes/" }
+  },
+  "scripts": {
+    "test": "php tests/unit.php",
+    "lint": "sh tests/lint.sh"
+  }
+}

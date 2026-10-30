@@ -1,0 +1,465 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Tracking Pixel 0.2.0\n"
+"Language: de_DE\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: wordpress-tracking-pixel\n"
+
+msgid "WordPress Tracking Pixel"
+msgstr "WordPress Tracking Pixel"
+
+msgid "Project-scoped tracking pixels for external emails, with a private reporting API."
+msgstr "Projektbezogene Zählpixel für extern versendete E-Mails mit einer geschützten API zur Auswertung."
+
+msgid "themetalleg"
+msgstr "themetalleg"
+
+msgid "Projects"
+msgstr "Projekte"
+
+msgid "Setup / Tutorial"
+msgstr "Einrichtung / Anleitung"
+
+msgid "Insufficient permissions."
+msgstr "Keine ausreichenden Berechtigungen."
+
+msgid "Enter a project name of 1-190 bytes."
+msgstr "Bitte einen Projektnamen mit 1–190 Bytes eingeben."
+
+msgid "Project not found."
+msgstr "Projekt nicht gefunden."
+
+msgid "Enter a key label of 1-190 bytes."
+msgstr "Bitte eine API-Key-Bezeichnung mit 1–190 Bytes eingeben."
+
+msgid "Choose indefinite or 90-day history."
+msgstr "Bitte eine unbegrenzte oder auf 90 Tage begrenzte Historie auswählen."
+
+msgid "Confirm permanent deletion of events older than 90 days."
+msgstr "Bitte die endgültige Löschung von Ereignissen bestätigen, die älter als 90 Tage sind."
+
+msgid "Type the project ID to confirm deletion."
+msgstr "Bitte die Projekt-ID eingeben, um die Löschung zu bestätigen."
+
+msgid "Unknown action."
+msgstr "Unbekannte Aktion."
+
+msgid "Changes saved."
+msgstr "Änderungen gespeichert."
+
+msgid "New API key, shown only in this response. Store it securely:"
+msgstr "Neuer API-Key, der nur in dieser Antwort angezeigt wird. Bitte sicher aufbewahren:"
+
+msgid "Refreshing this POST response may issue another key."
+msgstr "Beim erneuten Absenden dieser POST-Antwort kann ein weiterer API-Key erstellt werden."
+
+msgid "New Project"
+msgstr "Neues Projekt"
+
+msgid "Project name"
+msgstr "Projektname"
+
+msgid "Create Project"
+msgstr "Projekt erstellen"
+
+msgid "No projects yet."
+msgstr "Noch keine Projekte vorhanden."
+
+msgid "No API keys yet."
+msgstr "Noch keine API-Keys vorhanden."
+
+msgid "Search Projects"
+msgstr "Projekte suchen"
+
+msgid "Messages"
+msgstr "Nachrichten"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Events"
+msgstr "Ereignisse"
+
+msgid "All Projects"
+msgstr "Alle Projekte"
+
+msgid "Project navigation"
+msgstr "Projektnavigation"
+
+msgid "No projects match your search."
+msgstr "Keine Projekte entsprechen deiner Suche."
+
+#, php-format
+msgid "Page %1$d of %2$d"
+msgstr "Seite %1$d von %2$d"
+
+msgid "Requests"
+msgstr "Abrufe"
+
+msgid "First request"
+msgstr "Erster Abruf"
+
+msgid "Latest request"
+msgstr "Letzter Abruf"
+
+msgid "Event retention"
+msgstr "Aufbewahrung der Ereignisse"
+
+msgid "Indefinite"
+msgstr "Unbegrenzt"
+
+msgid "Rolling 90 days"
+msgstr "Jeweils die letzten 90 Tage"
+
+msgid "I accept permanent deletion of events older than 90 days."
+msgstr "Ich stimme der endgültigen Löschung von Ereignissen zu, die älter als 90 Tage sind."
+
+msgid "Save Retention"
+msgstr "Aufbewahrung speichern"
+
+msgid "API Keys"
+msgstr "API-Keys"
+
+msgid "Label"
+msgstr "Bezeichnung"
+
+msgid "Key ID"
+msgstr "API-Key-ID"
+
+msgid "Access"
+msgstr "Zugriff"
+
+msgid "Action"
+msgstr "Aktion"
+
+msgid "Read / write"
+msgstr "Lesen / Schreiben"
+
+msgid "Read only"
+msgstr "Nur Lesen"
+
+msgid "Revoke"
+msgstr "Widerrufen"
+
+msgid "Key label"
+msgstr "API-Key-Bezeichnung"
+
+msgid "Issue Key"
+msgstr "API-Key erstellen"
+
+msgid "View Events"
+msgstr "Ereignisse anzeigen"
+
+msgid "Delete Project"
+msgstr "Projekt löschen"
+
+msgid "Permanently deletes every message, event, and key in this project. Its tracking links stop recording requests."
+msgstr "Löscht alle Nachrichten, Ereignisse und API-Keys dieses Projekts endgültig. Die zugehörigen Tracking-Links erfassen danach keine Abrufe mehr."
+
+msgid "Confirm project ID"
+msgstr "Projekt-ID bestätigen"
+
+msgid "Delete Project Permanently"
+msgstr "Projekt endgültig löschen"
+
+msgid "Invalid filter. IDs require 128 alphanumeric characters; dates require YYYY-MM-DDTHH:MM:SSZ."
+msgstr "Ungültiger Filter. IDs benötigen 128 alphanumerische Zeichen; Zeitangaben müssen dem Format YYYY-MM-DDTHH:MM:SSZ entsprechen."
+
+msgid "From must not be later than to."
+msgstr "Der Beginn darf nicht nach dem Ende liegen."
+
+#, php-format
+msgid "Events: %s"
+msgstr "Ereignisse: %s"
+
+msgid "Email ID"
+msgstr "E-Mail-ID"
+
+msgid "From (UTC)"
+msgstr "Von (UTC)"
+
+msgid "To (UTC)"
+msgstr "Bis (UTC)"
+
+msgid "Filter Events"
+msgstr "Ereignisse filtern"
+
+msgid "Unable to retrieve events."
+msgstr "Die Ereignisse konnten nicht abgerufen werden."
+
+#, php-format
+msgid "Requests: %1$s | First: %2$s | Latest: %3$s"
+msgstr "Abrufe: %1$s | Erster Abruf: %2$s | Letzter Abruf: %3$s"
+
+msgid "Requested At (UTC)"
+msgstr "Abgerufen am (UTC)"
+
+msgid "No requests in this window."
+msgstr "Keine Abrufe in diesem Zeitraum."
+
+msgid "Previous"
+msgstr "Zurück"
+
+msgid "Next"
+msgstr "Weiter"
+
+msgid "HTTPS is required."
+msgstr "HTTPS ist erforderlich."
+
+msgid "Invalid credentials or insufficient project permissions."
+msgstr "Ungültige Zugangsdaten oder unzureichende Projektberechtigungen."
+
+msgid "Send a JSON object with Content-Type: application/json."
+msgstr "Bitte ein JSON-Objekt mit Content-Type: application/json senden."
+
+msgid "Send a JSON object, optionally containing external_id."
+msgstr "Bitte ein JSON-Objekt senden, das optional external_id enthält."
+
+msgid "external_id must contain exactly 128 ASCII letters or digits."
+msgstr "external_id muss genau 128 ASCII-Buchstaben oder Ziffern enthalten."
+
+msgid "Unable to register message."
+msgstr "Die Nachricht konnte nicht registriert werden."
+
+msgid "Invalid external_id."
+msgstr "Ungültige external_id."
+
+msgid "Dates must be valid UTC timestamps: YYYY-MM-DDTHH:MM:SSZ."
+msgstr "Zeitangaben müssen gültige UTC-Zeitstempel sein: YYYY-MM-DDTHH:MM:SSZ."
+
+msgid "from must not be later than to."
+msgstr "from darf nicht nach to liegen."
+
+msgid "page must be 1-1000000; per_page must be 1-100."
+msgstr "page muss zwischen 1 und 1000000 liegen; per_page zwischen 1 und 100."
+
+msgid "Network activation is not supported. Activate separately on each site."
+msgstr "Die netzwerkweite Aktivierung wird nicht unterstützt. Bitte auf jeder Website einzeln aktivieren."
+
+msgid "Unable to install tracking pixel database tables."
+msgstr "Die Datenbanktabellen für Tracking Pixel konnten nicht angelegt werden."
+
+msgid "Unable to create project."
+msgstr "Das Projekt konnte nicht erstellt werden."
+
+msgid "Invalid project or key scope."
+msgstr "Ungültiges Projekt oder ungültiger Berechtigungsumfang des API-Keys."
+
+msgid "Unable to issue key."
+msgstr "Der API-Key konnte nicht erstellt werden."
+
+msgid "Invalid retention."
+msgstr "Ungültige Aufbewahrungsdauer."
+
+msgid "Unable to update retention."
+msgstr "Die Aufbewahrungsdauer konnte nicht aktualisiert werden."
+
+msgid "1. Create a Project and API Key"
+msgstr "1. Projekt und API-Key erstellen"
+
+msgid "Open Tracking Pixel &rarr; Projects. Create a project and issue a read/write API key for your external email application. Store the key securely; it is shown once. A read-only key can retrieve reports but cannot register emails. To rotate a key, issue a replacement, update your application, and revoke the old key."
+msgstr "Öffne Tracking Pixel &rarr; Projekte. Erstelle ein Projekt und einen API-Key mit Lese- und Schreibzugriff für deine externe E-Mail-Anwendung. Bewahre den API-Key sicher auf; er wird nur einmal angezeigt. Ein API-Key mit reinem Lesezugriff kann Auswertungen abrufen, aber keine E-Mails registrieren. Erstelle zum Wechsel des API-Keys einen Ersatz, aktualisiere deine Anwendung und widerrufe den alten API-Key."
+
+msgid "Use HTTPS. Send API keys only in the Authorization header, never in emails, browser code, or URLs. Project IDs identify a project but do not grant API access."
+msgstr "Verwende HTTPS. Sende API-Keys ausschließlich im Authorization-Header, niemals in E-Mails, Browsercode oder URLs. Projekt-IDs kennzeichnen ein Projekt, gewähren aber keinen API-Zugriff."
+
+msgid "2. Understand the Identifiers"
+msgstr "2. Kennungen verstehen"
+
+msgid "Identifier"
+msgstr "Kennung"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Source"
+msgstr "Herkunft"
+
+msgid "Project ID"
+msgstr "Projekt-ID"
+
+msgid "Exactly 10 characters, A-Z, a-z, 0-9"
+msgstr "Genau 10 Zeichen: A-Z, a-z, 0-9"
+
+msgid "Generated by the plugin"
+msgstr "Vom Plugin erzeugt"
+
+msgid "External email ID"
+msgstr "Externe E-Mail-ID"
+
+msgid "Exactly 128 characters, A-Z, a-z, 0-9, case-sensitive"
+msgstr "Genau 128 Zeichen: A-Z, a-z, 0-9; Groß-/Kleinschreibung wird unterschieden"
+
+msgid "Your application, or generated when omitted"
+msgstr "Von deiner Anwendung oder automatisch erzeugt, wenn nicht angegeben"
+
+msgid "Pixel token"
+msgstr "Pixel-Token"
+
+msgid "64 random alphanumeric characters"
+msgstr "64 zufällige alphanumerische Zeichen"
+
+msgid "Generated by the plugin; use the returned URL unchanged"
+msgstr "Vom Plugin erzeugt; die zurückgegebene URL unverändert verwenden"
+
+msgid "API key"
+msgstr "API-Key"
+
+msgid "wtp_ followed by a selector and secret"
+msgstr "wtp_ gefolgt von einer API-Key-Kennung und einem Geheimnis"
+
+msgid "Issued in WordPress admin; never embed in an email"
+msgstr "Im WordPress-Adminbereich erstellt; niemals in eine E-Mail einbetten"
+
+msgid "Use a different email ID for every recipient delivery. Reuse an ID only when referring to the same tracked message in the same project. Do not use email addresses as IDs."
+msgstr "Verwende für jede Zustellung an einen Empfänger eine eigene E-Mail-ID. Verwende eine ID nur dann erneut, wenn es um dieselbe erfasste Nachricht im selben Projekt geht. Verwende keine E-Mail-Adressen als IDs."
+
+msgid "A valid 128-character ID:"
+msgstr "Eine gültige ID mit 128 Zeichen:"
+
+msgid "Invalid IDs include <code>email-123</code>, UUIDs with hyphens, IDs with spaces or underscores, and strings shorter or longer than 128 characters."
+msgstr "Ungültig sind beispielsweise <code>email-123</code>, UUIDs mit Bindestrichen, IDs mit Leerzeichen oder Unterstrichen sowie Zeichenfolgen mit weniger oder mehr als 128 Zeichen."
+
+msgid "Example PHP generation in your sending application:"
+msgstr "Beispiel zur Erzeugung mit PHP in deiner Versandanwendung:"
+
+msgid "3. Register an Email"
+msgstr "3. E-Mail registrieren"
+
+msgid "Replace PROJECT_ID and YOUR_API_KEY below. To let the plugin generate an ID, send an empty JSON object:"
+msgstr "Ersetze unten PROJECT_ID und YOUR_API_KEY. Sende ein leeres JSON-Objekt, damit das Plugin eine ID erzeugt:"
+
+msgid "To supply your own ID, use the same request with this JSON body:"
+msgstr "Verwende dieselbe Anfrage mit diesem JSON-Inhalt, um eine eigene ID anzugeben:"
+
+msgid "The response contains <code>project_id</code>, <code>external_id</code>, <code>tracking_url</code>, and <code>html</code>:"
+msgstr "Die Antwort enthält <code>project_id</code>, <code>external_id</code>, <code>tracking_url</code> und <code>html</code>:"
+
+msgid "Keep the returned ID with your outgoing message record. Re-registering it returns the same link without resetting history. Omitting the ID again creates a new message. For reliable retries after a lost response, generate and persist your own ID before registration."
+msgstr "Speichere die zurückgegebene ID zusammen mit dem Datensatz der versendeten Nachricht. Eine erneute Registrierung mit dieser ID liefert denselben Link, ohne die Historie zurückzusetzen. Wird die ID wieder weggelassen, entsteht eine neue Nachricht. Erzeuge und speichere für zuverlässige Wiederholungen nach einer verlorenen Antwort bereits vor der Registrierung eine eigene ID."
+
+msgid "4. Embed the Pixel"
+msgstr "4. Pixel einbetten"
+
+msgid "Insert the returned <code>html</code> string into the HTML body of the corresponding email before sending it. The exact format is:"
+msgstr "Füge die zurückgegebene <code>html</code>-Zeichenfolge vor dem Versand in den HTML-Inhalt der zugehörigen E-Mail ein. Das genaue Format lautet:"
+
+msgid "Do not use display:none, embed an API key, or reuse another recipient's tracking URL. A plain-text-only email cannot load this image. This plugin does not send emails or track clicks."
+msgstr "Verwende nicht display:none, bette keinen API-Key ein und verwende nicht die Tracking-URL eines anderen Empfängers. Reine Text-E-Mails können dieses Bild nicht laden. Dieses Plugin versendet keine E-Mails und erfasst keine Klicks."
+
+msgid "5. Retrieve Requests"
+msgstr "5. Abrufe auswerten"
+
+msgid "Add <code>external_id</code> to filter one message, and <code>from</code>/<code>to</code> for inclusive UTC date boundaries such as <code>2026-10-30T00:00:00Z</code>. Page starts at 1; per_page is 1-100. Results are newest first; use event IDs to reconcile duplicates when new requests arrive during pagination."
+msgstr "Ergänze <code>external_id</code>, um nach einer Nachricht zu filtern, und <code>from</code>/<code>to</code> für einschließlich geltende UTC-Zeitgrenzen wie <code>2026-10-30T00:00:00Z</code>. Die erste Seite ist 1; per_page liegt zwischen 1 und 100. Die neuesten Ergebnisse stehen zuerst. Gleiche doppelte Ergebnisse anhand der Ereignis-IDs ab, wenn während des Blätterns neue Abrufe eintreffen."
+
+msgid "Responses include request count, first/latest request timestamps in UTC, and (for events) the paginated event list. The total is the number of pixel requests, not the number of distinct readers. Dates are serialized as YYYY-MM-DDTHH:MM:SSZ. Invalid IDs, dates, and pagination return 400; invalid keys or scope return 401; production HTTP returns 403; storage failures return 500."
+msgstr "Antworten enthalten die Anzahl der Abrufe, den ersten und letzten Abrufzeitpunkt in UTC sowie bei Ereignissen die seitenweise Ereignisliste. Die Gesamtzahl bezeichnet Pixel-Abrufe, nicht unterschiedliche Leser. Zeitangaben verwenden YYYY-MM-DDTHH:MM:SSZ. Ungültige IDs, Zeitangaben und Seitenparameter liefern 400; ungültige API-Keys oder Berechtigungen 401; HTTP im Produktivbetrieb 403; Speicherfehler 500."
+
+msgid "6. Retention and Reliability"
+msgstr "6. Aufbewahrung und Zuverlässigkeit"
+
+msgid "Each project defaults to indefinite event history. Optional rolling 90-day retention hides expired events immediately and deletes them through hourly WordPress scheduled cleanup. Message IDs and links remain valid indefinitely, so an email opened years later can record another request. Switching back to indefinite cannot restore deleted events."
+msgstr "Die Ereignishistorie wird standardmäßig unbegrenzt aufbewahrt. Die optionale Aufbewahrung der jeweils letzten 90 Tage blendet abgelaufene Ereignisse sofort aus und löscht sie über die stündliche WordPress-Bereinigung. Nachrichten-IDs und Links bleiben unbegrenzt gültig, sodass auch Jahre später geöffnete E-Mails einen neuen Abruf erfassen können. Ein Wechsel zurück zur unbegrenzten Aufbewahrung stellt gelöschte Ereignisse nicht wieder her."
+
+msgid "WP-Cron depends on site traffic. For strict physical deletion deadlines, configure server cron to run <code>wp cron event run --due-now</code>. Backups and external logs need their own retention policies."
+msgstr "WP-Cron ist von Website-Aufrufen abhängig. Richte für verbindliche Fristen zur tatsächlichen Löschung einen Server-Cronjob mit <code>wp cron event run --due-now</code> ein. Backups und externe Protokolle benötigen eigene Aufbewahrungsregeln."
+
+msgid "Exclude every request with the <code>wtp_pixel</code> query parameter from CDN, reverse-proxy, and WordPress page caches. Exclude authenticated API routes from caching too. If your server strips Authorization headers, configure it to forward them to PHP."
+msgstr "Nimm alle Anfragen mit dem URL-Parameter <code>wtp_pixel</code> vom CDN-, Reverse-Proxy- und WordPress-Seitencache aus. Nimm auch authentifizierte API-Routen vom Cache aus. Falls dein Server Authorization-Header entfernt, konfiguriere ihre Weiterleitung an PHP."
+
+msgid "Every received valid GET is recorded, including repeat requests. HEAD requests are not recorded. Apple Mail Privacy Protection, image proxies, security scanners, disabled images, and email-client caching can create or suppress requests. These events cannot prove that a person read an email."
+msgstr "Jeder eingehende gültige GET-Abruf wird erfasst, auch wiederholte Abrufe. HEAD-Anfragen werden nicht erfasst. Apple Mail Privacy Protection, Bild-Proxys, Sicherheitsscanner, deaktivierte Bilder und E-Mail-Client-Caches können Abrufe erzeugen oder verhindern. Diese Ereignisse beweisen nicht, dass eine Person eine E-Mail gelesen hat."
+
+msgid "7. Privacy and Updates"
+msgstr "7. Datenschutz und Updates"
+
+msgid "The plugin stores external IDs and request timestamps, not recipient addresses, IP addresses, user agents, or tracking cookies. Pseudonymous tracking can still be subject to privacy law and consent requirements. Server/CDN logs may collect additional data independently."
+msgstr "Das Plugin speichert externe IDs und Abrufzeitpunkte, keine Empfängeradressen, IP-Adressen, User-Agents oder Tracking-Cookies. Auch pseudonymes Tracking kann Datenschutz- und Einwilligungspflichten unterliegen. Server- und CDN-Protokolle können unabhängig davon zusätzliche Daten erfassen."
+
+msgid "Stable GitHub Releases appear through WordPress's normal update checks. Detection is periodic, not immediate; automatic installation depends on your site's automatic-update settings. No separate updater plugin or GitHub token is required for public releases."
+msgstr "Stabile GitHub-Releases werden über die regulären WordPress-Updateprüfungen erkannt. Die Erkennung erfolgt regelmäßig, nicht sofort; die automatische Installation richtet sich nach den Update-Einstellungen deiner Website. Für öffentliche Releases sind weder ein separates Update-Plugin noch ein GitHub-Token erforderlich."
+
+msgid "Deactivating or uninstalling the plugin preserves its data. Deleting a project explicitly in admin permanently deletes its keys, messages, and events."
+msgstr "Beim Deaktivieren oder Deinstallieren des Plugins bleiben seine Daten erhalten. Das ausdrückliche Löschen eines Projekts im Adminbereich entfernt dessen API-Keys, Nachrichten und Ereignisse endgültig."
+
+msgid "Invalid filter. IDs require 128 alphanumeric characters; choose a valid date and time in the site timezone."
+msgstr "Ungültiger Filter. IDs benötigen 128 alphanumerische Zeichen. Wähle ein gültiges Datum mit Uhrzeit in der Website-Zeitzone."
+
+#, php-format
+msgid "Timezone: %s"
+msgstr "Zeitzone: %s"
+
+msgid "From"
+msgstr "Von"
+
+msgid "To"
+msgstr "Bis"
+
+msgid "Requested At"
+msgstr "Abgerufen am"
+
+msgid "Event pagination"
+msgstr "Ereignisse durchblättern"
+
+#, php-format
+msgid "%1$s-%2$s of %3$s events"
+msgstr "%1$s-%2$s von %3$s Ereignissen"
+
+msgid "First page"
+msgstr "Erste Seite"
+
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
+msgid "Next page"
+msgstr "Nächste Seite"
+
+msgid "Last page"
+msgstr "Letzte Seite"
+
+msgid "Events per page"
+msgstr "Ereignisse pro Seite"
+
+msgid "The WordPress Events tab uses the site date format, time format, and timezone from Settings > General. Its date filters use the site timezone, and its paginated table offers 10, 25, 50, or 100 events per page. API timestamps and API date filters remain UTC."
+msgstr "Der WordPress-Tab Ereignisse verwendet Datumsformat, Zeitformat und Zeitzone aus Einstellungen > Allgemein. Die Datumsfilter verwenden die Website-Zeitzone. In der Tabelle lassen sich 10, 25, 50 oder 100 Ereignisse pro Seite anzeigen. API-Zeitstempel und API-Datumsfilter bleiben in UTC."
+
+msgid "8. Test Your Live API"
+msgstr "8. Deine Live-API testen"
+
+msgid "The optional command-line tester requires Node.js 22 or newer and a project API key. Run it only against a site and project you are authorized to test. Download the generic script and run the commands below from its directory."
+msgstr "Der optionale Kommandozeilen-Test benötigt Node.js 22 oder neuer und einen Projekt-API-Key. Verwende ihn nur für Websites und Projekte, für die du eine Testberechtigung hast. Lade das allgemeine Skript herunter und führe die folgenden Befehle in seinem Verzeichnis aus."
+
+msgid "Download live API tester"
+msgstr "Live-API-Tester herunterladen"
+
+msgid "Enter the API namespace URL when prompted, then the project ID and API key. The key prompt is hidden. Configuration stays in environment variables; never save live credentials, site details, or response data in project files or shared commands."
+msgstr "Gib bei der Abfrage die API-Namespace-URL, dann die Projekt-ID und den API-Key ein. Der API-Key wird bei der Eingabe nicht angezeigt. Die Konfiguration bleibt in Umgebungsvariablen. Speichere niemals Live-Zugangsdaten, Website-Angaben oder Antwortdaten in Projektdateien oder geteilten Befehlen."
+
+msgid "The default is read-only: it checks authentication and summary retrieval without creating data. The tester prints only check results, not API keys, message IDs, tracking URLs, or raw responses."
+msgstr "Standardmäßig wird nur gelesen: Der Test prüft Authentifizierung und Zusammenfassungen, ohne Daten anzulegen. Er gibt nur Prüfergebnisse aus, keine API-Keys, Nachrichten-IDs, Tracking-URLs oder Rohantworten."
+
+msgid "For a dedicated test project, the optional write test creates two messages and two pixel events. It checks registration, repeated pixel requests, pagination, and summaries. Those records remain in the project for inspection; the tester does not delete projects or revoke keys."
+msgstr "Der optionale Schreibtest für ein eigenes Testprojekt erzeugt zwei Nachrichten und zwei Pixel-Ereignisse. Er prüft Registrierung, wiederholte Pixel-Abrufe, Seitennavigation und Zusammenfassungen. Die Datensätze bleiben zur Prüfung im Projekt. Der Test löscht keine Projekte und widerruft keine API-Keys."
+
+msgid "Revoke disposable API keys after testing. HTTPS is required; redirects are not followed and credentials are never forwarded to another origin. Hosting logs have their own retention policies."
+msgstr "Widerrufe temporäre API-Keys nach dem Test. HTTPS ist erforderlich. Weiterleitungen werden nicht verfolgt und Zugangsdaten niemals an einen anderen Ursprung gesendet. Für Hosting-Protokolle gelten eigene Aufbewahrungsregeln."
+
+msgid "Omit external_id to retrieve events for the whole project. Events are paginated, with at most 100 per response; fetch all pages using X-WP-TotalPages. The summary endpoint returns the matching count and first/latest timestamps in one response, not a full export of messages or project settings."
+msgstr "Lasse external_id weg, um Ereignisse des gesamten Projekts abzurufen. Die Ergebnisse sind auf höchstens 100 Ereignisse pro Antwort begrenzt. Rufe anhand von X-WP-TotalPages alle Seiten ab. Der Summary-Endpunkt liefert die passende Anzahl sowie den ersten und letzten Zeitpunkt in einer Antwort, keinen vollständigen Export der Nachrichten oder Projekteinstellungen."
+
+msgid "Use last_days=5 on events or summary for the preceding five times 24 hours in UTC, ending at request time. Values must be whole numbers from 1 to 36500. It works for the whole project or with external_id. Do not combine last_days with from or to; that returns HTTP 400. Project retention still applies."
+msgstr "Verwende last_days=5 bei events oder summary für die vorherigen fünf mal 24 Stunden in UTC bis zum Anfragezeitpunkt. Erlaubt sind ganze Zahlen von 1 bis 36500. Das gilt für das gesamte Projekt oder zusammen mit external_id. Kombiniere last_days nicht mit from oder to; das führt zu HTTP 400. Die Aufbewahrungsregel des Projekts gilt weiterhin."
+
+msgid "Time-filtered responses include date_range.from and date_range.to as ISO UTC timestamps. For consistent pagination, reuse those resolved values as from and to on subsequent pages and omit last_days. Otherwise the relative time window is recalculated on each request. Date boundaries are inclusive."
+msgstr "Zeitgefilterte Antworten enthalten date_range.from und date_range.to als ISO-UTC-Zeitstempel. Verwende diese aufgelösten Werte für weitere Seiten als from und to und lasse last_days weg. So bleibt der Zeitraum gleich. Andernfalls wird der relative Zeitraum bei jeder Anfrage neu berechnet. Die Zeitgrenzen sind einschließlich."
+
+msgid "Use last_days alone, or from/to, not both."
+msgstr "Verwende entweder last_days oder from/to, nicht beides."
+
+msgid "last_days must be a whole number between 1 and 36500."
+msgstr "last_days muss eine ganze Zahl zwischen 1 und 36500 sein."
