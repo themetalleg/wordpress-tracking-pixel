@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WordPress Tracking Pixel
  * Description: Project-scoped tracking pixels for external emails, with a private reporting API.
- * Version: 0.2.0
+ * Version: 0.3.0
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Author: themetalleg
@@ -16,7 +16,7 @@ declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
-define('WTP_VERSION', '0.2.0');
+define('WTP_VERSION', '0.3.0');
 define('WTP_FILE', __FILE__);
 
 if (is_file(__DIR__ . '/vendor/autoload.php')) {

@@ -3,7 +3,7 @@ Contributors: themetalleg
 Tags: email, tracking, pixel, rest-api
 Requires at least: 6.6
 Requires PHP: 8.2
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -12,7 +12,8 @@ Persistent tracking pixels for external emails, with project-scoped API keys.
 == Description ==
 
 Manage independent tracking projects, register messages through the REST API,
-and retrieve timestamped pixel requests. No email sending or click tracking.
+resolve pixel tokens within a project, and retrieve timestamped pixel requests.
+No email sending or click tracking.
 See Tracking Pixel > Setup / Tutorial after activation.
 
 Each project supports indefinite or rolling 90-day event history. Tracking links
@@ -37,6 +38,10 @@ Use the standard WordPress update UI. No separate updater plugin is needed.
 No. Delete a project explicitly in admin to permanently remove its data.
 
 == Changelog ==
+
+= 0.3.0 =
+* Add an authenticated, read-only, project-scoped pixel token resolver.
+* Prevent resolver responses from being cached and add project-isolation coverage.
 
 = 0.2.0 =
 * Add last_days reporting filters and resolved UTC date_range boundaries.

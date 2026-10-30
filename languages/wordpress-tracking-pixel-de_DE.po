@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress Tracking Pixel 0.2.0\n"
+"Project-Id-Version: WordPress Tracking Pixel 0.3.0\n"
 "Language: de_DE\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"

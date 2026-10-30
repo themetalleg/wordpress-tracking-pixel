@@ -24,6 +24,10 @@ final class Api
             'methods' => 'POST', 'callback' => [$this, 'register'],
             'permission_callback' => fn (WP_REST_Request $request) => $this->permission($request, true),
         ]);
+        register_rest_route('tracking-pixel/v1', $prefix . '/messages/resolve', [
+            'methods' => 'POST', 'callback' => [$this, 'resolve'],
+            'permission_callback' => fn (WP_REST_Request $request) => $this->permission($request, false),
+        ]);
         foreach (['events', 'summary'] as $resource) {
             register_rest_route('tracking-pixel/v1', $prefix . '/' . $resource, [
                 'methods' => 'GET', 'callback' => [$this, 'report'],
@@ -67,6 +71,32 @@ final class Api
         } catch (RuntimeException $exception) {
             return new WP_Error('wtp_storage_error', __('Unable to register message.', 'wordpress-tracking-pixel'), ['status' => 500]);
         }
+    }
+
+    public function resolve(WP_REST_Request $request): WP_REST_Response|WP_Error
+    {
+        if (!$request->is_json_content_type()) {
+            return new WP_Error('wtp_json_required', __('Send a JSON object containing token.', 'wordpress-tracking-pixel'), ['status' => 400]);
+        }
+        $params = $request->get_json_params();
+        $raw = ltrim($request->get_body());
+        if (!is_array($params) || !str_starts_with($raw, '{')) {
+            return new WP_Error('wtp_invalid_body', __('Send a JSON object containing token.', 'wordpress-tracking-pixel'), ['status' => 400]);
+        }
+        if (!Identifiers::validToken($params['token'] ?? null)) {
+            return new WP_Error('wtp_invalid_token', __('token must contain exactly 64 ASCII letters or digits.', 'wordpress-tracking-pixel'), ['status' => 400]);
+        }
+        $external = $this->store->resolveToken($request['project'], $params['token']);
+        if ($external === null) {
+            $response = new WP_REST_Response([
+                'code' => 'wtp_message_not_found',
+                'message' => __('No message matches this token in the authenticated project.', 'wordpress-tracking-pixel'),
+            ], 404);
+        } else {
+            $response = new WP_REST_Response(['project_id' => $request['project'], 'external_id' => $external]);
+        }
+        $response->header('Cache-Control', 'no-store');
+        return $response;
     }
 
     public static function date(mixed $value): ?string

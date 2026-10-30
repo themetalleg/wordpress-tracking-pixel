@@ -57,6 +57,25 @@ registration with an omitted ID creates a new message. For idempotent retries
 after a lost response, generate and persist your own ID before registration.
 Never include API credentials or recipient addresses in email URLs.
 
+### Read-only token resolver
+
+The source now includes a project-scoped resolver for senders that need to map
+an existing pixel token back to its external message ID:
+
+```text
+POST /wp-json/tracking-pixel/v1/projects/{project}/messages/resolve
+Authorization: Bearer <project-scoped-key>
+Content-Type: application/json
+
+{"token":"<64-character-pixel-token>"}
+```
+
+The endpoint accepts read-capable keys, requires HTTPS outside local
+development, returns only `project_id` and `external_id`, and uses
+`Cache-Control: no-store`. Unknown tokens return HTTP 404 with code
+`wtp_message_not_found`. It does not register messages or record opens. This
+route is included in v0.3.0; v0.2.0 and earlier do not provide it.
+
 ## Reporting API
 
 Send the same Bearer header for:
@@ -223,7 +242,7 @@ Hosted CI and a live GitHub release-to-release update remain release gates.
 The integration test creates isolated fixture projects and deletes them on exit.
 It also creates a temporary administrator, logs in over HTTP, submits the real
 project and API-key forms with WordPress nonces, and exercises the external
-Bearer-authenticated API. The flow covers generated/supplied email IDs,
+Bearer-authenticated API, including project-isolated token resolution. The flow covers generated/supplied email IDs,
 idempotent registration, repeated pixel GETs, HEAD exclusion, paginated events,
 summaries, API-key revocation, and project deletion. Temporary accounts and
 projects are removed in a finally block, including after failed assertions.

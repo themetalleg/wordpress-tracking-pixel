@@ -53,6 +53,8 @@ try {
     $check($request($other, 'events', $key)->get_status() === 401, 'Cross-project reads denied.');
     $check($request($other, 'messages', $key, 'POST', new stdClass())->get_status() === 401, 'Cross-project writes denied.');
     $check($request($project, 'messages', $read, 'POST', new stdClass())->get_status() === 401, 'Read-only key cannot write.');
+    $check($request($project, 'messages/resolve', $read, 'POST', ['token' => str_repeat('A', 64)])->get_status() === 404,
+        'Resolver permits read keys but does not find an unknown token.');
 
     $registered = $request($project, 'messages', $key, 'POST', new stdClass());
     $check($registered->get_status() === 200, 'Register without external ID.');
@@ -60,6 +62,18 @@ try {
     $check(Identifiers::validExternal($message['external_id']), 'Generated external ID format.');
     $check(!str_contains($message['tracking_url'], $key), 'No credential in tracking URL.');
     $check(str_contains($message['html'], 'width="1" height="1"'), 'Return HTML image tag.');
+    $token = parse_url($message['tracking_url'], PHP_URL_QUERY);
+    parse_str((string) $token, $pixelQuery);
+    $pixelParts = explode('.', $pixelQuery['wtp_pixel'] ?? '');
+    $resolved = $request($project, 'messages/resolve', $read, 'POST', ['token' => $pixelParts[1] ?? '']);
+    $check($resolved->get_status() === 200 && $resolved->get_data() === [
+        'project_id' => $project, 'external_id' => $message['external_id'],
+    ], 'Read key resolves pixel token only within its project.');
+    $check($resolved->get_headers()['Cache-Control'] === 'no-store', 'Resolver response is not cacheable.');
+    $check($request($other, 'messages/resolve', $otherKey, 'POST', ['token' => $pixelParts[1]])->get_status() === 404,
+        'Resolver does not disclose cross-project message identities.');
+    $check($request($project, 'messages/resolve', $read, 'POST', ['token' => str_repeat('!', 64)])->get_status() === 400,
+        'Resolver rejects malformed pixel tokens.');
     $repeated = $request($project, 'messages', $key, 'POST', ['external_id' => $message['external_id']]);
     $check($repeated->get_data() === $message, 'Re-registering supplied ID is idempotent.');
     $generatedAgain = $request($project, 'messages', $key, 'POST', new stdClass())->get_data();

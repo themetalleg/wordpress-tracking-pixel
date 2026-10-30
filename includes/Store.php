@@ -198,6 +198,16 @@ final class Store
         ));
     }
 
+    public function resolveToken(string $project, string $token): ?string
+    {
+        global $wpdb;
+        $external = $wpdb->get_var($wpdb->prepare(
+            "SELECT external_id FROM {$this->table('messages')} WHERE project_id = %s AND token = %s",
+            $project, $token
+        ));
+        return is_string($external) ? $external : null;
+    }
+
     public function record(string $project, string $token): void
     {
         global $wpdb;
