@@ -40,6 +40,30 @@ curl --request POST 'https://example.com/wp-json/tracking-pixel/v1/projects/PROJ
 ```
 
 The JSON response contains `project_id`, `external_id`, `tracking_url`, and `html`.
+The plugin generates `tracking_url` from WordPress's **Settings > General >
+Site Address (URL)** (`home_url('/')`), not the separate **WordPress Address
+(URL)** setting. In BlueEvolution's **Settings > Integrations > Email Tracking**,
+enter that exact HTTPS Site Address, preserving whether it uses `www`, any
+explicit port, and any subdirectory. For example, `https://example.com` and
+`https://www.example.com` are different hosts. Trailing slashes are ignored.
+
+BlueEvolution rejects pixel URLs outside the configured site or project. Its
+updated connection test checks API access, resolver availability, write
+permissions, and a registered message's pixel URL. It registers one reusable
+synthetic test message per project; it does not send email or fetch the pixel.
+Older BlueEvolution betas only checked API access and resolver availability,
+so their connection test could succeed despite a pixel URL mismatch.
+If sending reports "WordPress returned a tracking URL outside the configured
+project", compare the configured address with WordPress's Site Address and
+verify that the project ID matches. Do not share API keys or full tracking URLs
+when troubleshooting.
+
+BlueEvolution saves request totals and timestamps locally for offline display,
+and still requests fresh data whenever a tracked message is opened. It displays
+timestamps in the user's local timezone and language. The snapshot includes up
+to the latest 10,000 timestamps; larger or incomplete lists are marked. Remote
+retention settings still affect the data returned by the API.
+
 Insert the returned `html` into that message's HTML body:
 
 ```html
